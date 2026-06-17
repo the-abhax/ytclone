@@ -1,0 +1,66 @@
+.player {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.player__stage {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.player__stage .thumb-art {
+  border-radius: 0;
+  border: none;
+}
+
+.player__play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 17, 16, 0.15);
+  transition: background 0.15s ease;
+}
+
+.player__stage:hover .player__play-overlay {
+  background: rgba(15, 17, 16, 0.32);
+}
+
+.player__play-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(245, 240, 230, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bg);
+}
+
+.player__play-icon svg {
+  width: 28px;
+  height: 28px;
+  margin-left: 3px;
+}
+
+.player__embed-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.player__embed {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}

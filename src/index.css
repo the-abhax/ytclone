@@ -1,0 +1,115 @@
+:root {
+  /* Color tokens */
+  --bg: #0f1110;
+  --surface: #1a1c1a;
+  --surface-raised: #232523;
+  --border: #32352f;
+  --paper: #f5f0e6;
+  --paper-dim: #c9c4b8;
+  --muted: #8b8f89;
+  --accent: #e8542e;
+  --accent-dim: #6b2e1e;
+  --focus-ring: #e8542e;
+
+  /* Type tokens */
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+  /* Layout */
+  --sidebar-width: 248px;
+  --topbar-height: 72px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--paper);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input {
+  font-family: inherit;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* Visible keyboard focus everywhere, per accessibility floor */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+body[data-theme='light'] {
+  --bg: #f5f0e6;
+  --surface: #ffffff;
+  --surface-raised: #ffffff;
+  --border: #ddd6c6;
+  --paper: #1a1c1a;
+  --paper-dim: #4a4d47;
+  --muted: #767a72;
+  --accent: #c9461f;
+  --accent-dim: #f3d9cd;
+}
+
+body[data-theme='light'] .thumb-art {
+  opacity: 0.9;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

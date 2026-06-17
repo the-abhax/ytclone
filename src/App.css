@@ -1,0 +1,39 @@
+@import './components/Sidebar.css';
+@import './components/Topbar.css';
+@import './components/SearchBar.css';
+@import './components/VideoThumb.css';
+@import './components/VideoCard.css';
+@import './components/VideoGrid.css';
+@import './components/Player.css';
+@import './pages/pages.css';
+
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.app-shell__main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-shell__content {
+  flex: 1;
+}
+
+.app-shell__overlay {
+  display: none;
+}
+
+@media (max-width: 880px) {
+  .app-shell__overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    border: none;
+    z-index: 40;
+  }
+}

@@ -1,0 +1,251 @@
+.page {
+  padding: 28px 32px 60px;
+  max-width: 1400px;
+}
+
+.page__header {
+  margin-bottom: 28px;
+}
+
+.page__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.9rem;
+  margin: 0 0 6px;
+  color: var(--paper);
+}
+
+.page__subtitle {
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+/* Watch page layout */
+.page--watch {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 32px;
+  align-items: start;
+}
+
+.watch__main {
+  min-width: 0;
+}
+
+.watch__info {
+  padding-top: 20px;
+}
+
+.watch__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.3;
+  margin: 0 0 10px;
+  color: var(--paper);
+}
+
+.watch__meta-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.watch__duration {
+  color: var(--accent);
+}
+
+.watch__creator-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 20px;
+}
+
+.watch__creator-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--bg);
+  flex-shrink: 0;
+}
+
+.watch__creator-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.watch__creator-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--paper);
+}
+
+.watch__creator-label {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.watch__description {
+  color: var(--paper-dim);
+  font-size: 0.92rem;
+  line-height: 1.65;
+  margin: 0 0 20px;
+  max-width: 640px;
+  white-space: pre-line;
+}
+
+.watch__description-toggle {
+  display: inline-block;
+  margin-left: 6px;
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.88rem;
+  padding: 0;
+}
+
+.watch__description-toggle:hover {
+  text-decoration: underline;
+}
+
+.player-skeleton {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-md);
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  animation: skeleton-pulse 1.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .player-skeleton {
+    animation: none;
+  }
+}
+
+.watch__tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.watch__tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--paper-dim);
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 100px;
+}
+
+.watch__related {
+  border-left: 1px solid var(--border);
+  padding-left: 28px;
+}
+
+.watch__related-heading {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin: 0 0 18px;
+}
+
+.watch__related-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.watch__related-list .video-card {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 12px;
+}
+
+.watch__related-list .video-card__body {
+  padding-top: 0;
+}
+
+.watch__related-list .video-card__title {
+  font-size: 0.86rem;
+}
+
+.watch__back-link {
+  display: inline-block;
+  margin-top: 24px;
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.watch__back-link:hover {
+  text-decoration: underline;
+}
+
+.watch__back-btn {
+  margin-top: 16px;
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.88rem;
+}
+
+@media (max-width: 1100px) {
+  .page--watch {
+    grid-template-columns: 1fr;
+  }
+
+  .watch__related {
+    border-left: none;
+    border-top: 1px solid var(--border);
+    padding-left: 0;
+    padding-top: 24px;
+  }
+
+  .watch__related-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+  }
+
+  .watch__related-list .video-card {
+    display: block;
+  }
+
+  .watch__related-list .video-card__body {
+    padding-top: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding: 20px 16px 40px;
+  }
+
+  .page__title {
+    font-size: 1.5rem;
+  }
+}
